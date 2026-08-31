@@ -17,7 +17,7 @@ export const cors = (req, res, next) => {
     return next();
   }
 
-  if (isProduction && !whiteList.includes(origin)) {
+  if (isProduction && origin && !whiteList.includes(origin)) {
     return res.status(403).json({
       success: false,
       message: '허용되지 않은 출처입니다.',
