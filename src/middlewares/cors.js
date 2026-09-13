@@ -3,6 +3,7 @@ import { isDevelopment, isProduction } from '../config/config.js';
 export const cors = (req, res, next) => {
   const whiteList = [
     'https://panda-market-of-monstera.netlify.app',
+    'http://localhost:5173',
   ];
 
   const origin = req.get('origin');
