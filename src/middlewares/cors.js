@@ -1,17 +1,12 @@
 import { isDevelopment, isProduction } from '../config/config.js';
 
 export const cors = (req, res, next) => {
-  console.log('process.env.NODE_ENV', process.env.NODE_ENV);
   const whiteList = [
-    'https://www.naver.com',
-    'https://www.tossinvest.com',
-    'https://www.my-site.com',
+    'https://panda-market-of-monstera.netlify.app',
   ];
 
   const origin = req.get('origin');
   res.vary('origin');
-
-  console.log('origin', origin);
 
   if (!origin && isDevelopment) {
     return next();

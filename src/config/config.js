@@ -28,7 +28,7 @@ const parseEnvironment = () => {
     if (error instanceof z.ZodError) {
       console.error('환경 변수 검증 실패:', flattenError(error));  // 환경 변수 검증과 관련한 오류일 땐 보기좋게 flatten하여 오류 출력, 혹은 fieldErrors만 꺼내서 출력하기도 함.
     } else {
-      console.log(error);  // 환경 변수 검증과 무관한 오류(zod 오류가 아닌 오류)일 때도 어쨌든 출력.
+      console.error(error);  // 환경 변수 검증과 무관한 오류(zod 오류가 아닌 오류)일 때도 어쨌든 출력.
     }
     throw error;  // fail fast 유도.
   }
